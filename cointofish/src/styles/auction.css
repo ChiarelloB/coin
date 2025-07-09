@@ -1,0 +1,267 @@
+.auction-system {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.auction-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.auction-header h2 {
+  margin: 0;
+  color: #333;
+}
+
+.create-auction-btn {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+.create-auction-btn:hover:not(:disabled) {
+  background: #218838;
+}
+
+.create-auction-btn:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+}
+
+.create-auction-form {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.create-auction-form h3 {
+  margin-top: 0;
+  color: #333;
+  border-bottom: 2px solid #28a745;
+  padding-bottom: 10px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #28a745;
+  box-shadow: 0 0 5px rgba(40, 167, 69, 0.3);
+}
+
+.form-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.form-actions button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+.form-actions button:first-child {
+  background: #28a745;
+  color: white;
+}
+
+.form-actions button:first-child:hover {
+  background: #218838;
+}
+
+.form-actions button:last-child {
+  background: #6c757d;
+  color: white;
+}
+
+.form-actions button:last-child:hover {
+  background: #5a6268;
+}
+
+.auctions-list {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.auctions-list h3 {
+  margin-top: 0;
+  color: #333;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 10px;
+}
+
+.auctions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.auction-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  background: #f8f9fa;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.auction-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.auction-fish h4 {
+  margin: 0 0 10px 0;
+  font-size: 20px;
+}
+
+.auction-fish p {
+  margin: 5px 0;
+  color: #666;
+}
+
+.auction-fish .mutation {
+  color: #8A2BE2;
+  font-weight: bold;
+}
+
+.auction-info {
+  margin: 15px 0;
+  padding: 15px;
+  background: white;
+  border-radius: 5px;
+}
+
+.auction-info p {
+  margin: 8px 0;
+  color: #333;
+}
+
+.auction-info strong {
+  color: #28a745;
+}
+
+.bid-section {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.bid-section input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.bid-section button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.bid-section button:hover {
+  background: #0056b3;
+}
+
+.cooldown-info {
+  background: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: 5px;
+  padding: 15px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.cooldown-info p {
+  margin: 0;
+  color: #856404;
+  font-size: 16px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .auction-system {
+    padding: 10px;
+  }
+  
+  .auction-header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  
+  .auctions-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .bid-section {
+    flex-direction: column;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+}
+
+/* Animations */
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+.auction-card.ending-soon {
+  border-color: #dc3545;
+  animation: pulse 2s infinite;
+}
+
+.auction-card.ending-soon .auction-info {
+  background: #f8d7da;
+}
